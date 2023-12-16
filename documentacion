@@ -1,0 +1,35 @@
+Documentacion del dia 16/12/2023
+
+Aplicacion
+--------------
+
+Proposito: Leer codigo de barra de un producto a traves de la camara del celular.
+
+Problemas al desarrollar: Las imagenes de codigos que carecen de alta calidad no permiten una correcta lectura. 
+
+Solucion: En lugar de tomar una foto del codigo, se realiza una captura de video constante que permite escanear el codigo aunque se posee una camara de pocos pixeles, por ejemplo la camara web de la notebook. 
+
+Codigo tecnico: 
+---------------
+- Ruta que renderiza el html para poder visualizar los objetos a escanear.
+
+- Funcion "generar_frames"que captura el codigo en tiempo real.
+
+- Ruta que llama a la funcion 
+
+
+
+Configuracion de servidor nginx
+-------------------------------
+- Se instalo nginx
+- En la carpeta /etc/nginx/conf.d
+	> se creo un archivo de configuracion "archivo.conf"
+
+ 	> Se comento una linea de codigo de "nginx.conf", para que no se lea la configuracion por 					 				defecto	de nginx que se encontraba en sites-enabled
+ 	
+ 	> Se agrego el dominio a /etc/hosts
+ 	
+ 	> Se instalo gunicorn. (es un servidor web que actúa como un puente entre los servidores web como Nginx y las aplicaciones web escritas en diferentes lenguajes de programación, incluido Python)
+
+
+
