@@ -5,17 +5,39 @@
 <div class="container text-center">
     <div class="row">
       <div class="col">
-        <h1>Codigo: {{ codigo }} </h1>
+  {% if codigo %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Codigo EAN</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Precio</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ codigo.ean }}</th>
+            <td><h2>{{ codigo.nameComplete }}</h2></td>
+            <td>{{ codigo.dimension }}{{ codigo.unidad_de_peso }}</td>
+            <td>{{ codigo.precio }}</td>
+
+          </tr>
+        </tbody>
+      </table>
+  {% else %}
+      
+  {{ codigoBuscado }}
+      <div class="pt-3">
+        <a class="btn btn-info ml-2" href="{{ url_for('googleCodigo', numero=codigoBuscado) }}">Buscar producto</a>
+    </div>
+    
+  {% endif %}
+        
         <div class="pt-3">
             <a class="btn btn-danger ml-2" href="{{ url_for('capturar') }}">Escanear de nuevo</a>
         </div>
-        <div class="pt-3">
-            <a class="btn btn-info ml-2" href="#">Asociar a producto</a>
-        </div>
-        <div class="pt-3">
-            <a class="btn btn-warning ml-2" href="#">Informacion de producto</a>
-        </div>
-       
       </div>
     </div>
   </div>
