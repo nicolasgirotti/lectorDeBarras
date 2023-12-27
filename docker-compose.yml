@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+        mode: host
+    devices:
+      - /dev/video0:/dev/video0
+    

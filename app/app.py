@@ -19,7 +19,8 @@ app.config['SECRET_KEY'] ='llave-secreta'
 socketio = SocketIO(app, async_mode='eventlet')
 
 #Conexion a la base de datos
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://nicolas:naiki2353@localhost/productos'
+#app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://nico:naiki2353@172.20.0.2/productos'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://nico:naiki2353@localhost/productos'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 
 db = SQLAlchemy(app)
@@ -266,4 +267,4 @@ def googleCodigo(numero):
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True,host='0.0.0.0', port=5000)

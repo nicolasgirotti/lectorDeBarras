@@ -1,4 +1,4 @@
-import mysql.connector
+"""import mysql.connector
 import json
 
 # Establecer la conexión a la base de datos
@@ -44,4 +44,4 @@ for producto in datos_productos:
 
 # Cerrar la conexión
 cursor.close()
-conexion.close()
+conexion.close()"""
